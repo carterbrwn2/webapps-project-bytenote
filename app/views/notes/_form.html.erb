@@ -1,0 +1,30 @@
+<!-- Author: Ally Chitwood - all -->
+<!-- Form for creating or editing a note -->
+
+<% if @note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+      <% note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_for @note do |f|%>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field(:title, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.hidden_field :content, id: :content_body %>
+    <trix-editor input="content_body"></trix-editor>
+  </p>
+  <p>
+    <%= hidden_field_tag :notebook_id, params[:notebook_id] %>
+    <%= f.submit({:class => 'btn btn-dark'}) %>
+  </p>
+<%end %>

@@ -1,0 +1,21 @@
+<!-- Author: Daniel Greer - all -->
+
+<% if user_signed_in? %>
+  <!-- Redirect -->
+  <% controller.redirect_to notebooks_path %>
+<% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1> Welcome to ByteNote! </h1>
+  </div>
+</div>
+<br/>
+
+<!-- Links for log in and signup -->
+<h2> Returning user? </h2>
+<%= link_to('Log In', new_user_session_path, class: "btn btn-dark") %>
+<br/>
+<br/>
+<h2> New user? </h2>
+<%= link_to('Sign Up', new_user_registration_path, class: "btn btn-dark") %>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <%= link_to 'Profile', edit_user_registration_path, :class => 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Notebooks", notebooks_path, :class => 'nav-link'  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Games", games_path, :class => 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Themes", themes_path, :class => 'nav-link' %>
+    </li>
+  </ul>
+</nav>

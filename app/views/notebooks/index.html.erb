@@ -1,0 +1,27 @@
+<!-- Author: Carter Brown - all -->
+<!-- Creates a list of all the notebooks associated with a user --> 
+
+<h1>Notebooks</h1>
+<hr />
+<div class="container-fluid">
+  <% @notebooks.each_with_index do |notebook, i| %>
+    <div class="row">
+      <div class="col-3">
+        <h2 class="display_object nb_name"><%= notebook.name %></h2>
+      </div>
+      <div class="col">
+        <%= link_to 'Notes', notebook, class: "btn btn-dark spaced" %>
+        <%= link_to 'Edit', edit_notebook_path(notebook), class: "btn btn-dark spaced" %>
+        <%= link_to 'Delete', notebook, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-dark spaced" %>
+      </div>
+    </div>
+    <% if i < @notebooks.size-1 %>
+      <hr />
+    <% end %>
+  <% end %>
+</div>
+
+<br />
+
+<%= link_to 'New Notebook', new_notebook_path, class: "btn btn-dark" %>
+

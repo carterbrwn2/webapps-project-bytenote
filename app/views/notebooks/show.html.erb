@@ -1,0 +1,29 @@
+<!-- Author: Carter Brown - all -->
+<!-- Shows all notes associated with a notebook -->
+
+<p id="notice"><%= notice %></p>
+<h1><%= @notebook.name %></h1>
+<div class="container-fluid">
+  <% @notebook.notes.each do |note|%>
+    <div class="row">
+      <div class="col">
+        <h4 class="display_object"><%= note.title %></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col note_content">
+        <%= raw note.content %>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col">
+        <%= link_to 'Edit', edit_note_path(note), class: "btn btn-dark spaced" %>
+        <%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-dark spaced" %>
+        <br /><br />
+      </div>
+    </div>
+  <% end %>
+</div>
+<br />
+<%= link_to 'New Note', new_note_path(:notebook_id => @notebook.id) %>

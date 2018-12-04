@@ -1,0 +1,6 @@
+<!-- Author: Ally Chitwood -->
+<!-- Generates a form for creating a new note -->
+
+<h1>Create Note For <%= Notebook.find(@notebook.id).name %></h1>
+
+<%= render 'form', note: @note %>

@@ -1,0 +1,18 @@
+body {
+    background-color: #008500;
+    color: azure;
+    font-size: 2em;
+}
+
+h1 {
+    background-color: #008000;
+    color: coral;
+}
+
+div {
+    background-color: #d5f4e6;
+}
+
+span {
+    background-color: #94ff33;
+}

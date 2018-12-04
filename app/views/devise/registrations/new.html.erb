@@ -1,0 +1,54 @@
+<!-- Carter: Cleaned up layout -->
+
+<h2>Join ByteNote</h2>
+<br />
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "user@sample.com" %>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "******" %>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "******"  %>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn btn-dark" %>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+
+<% end %>
+<br /><br />
+<p>Already a user?</p>
+<%= render "devise/shared/links" %>
+</div>
